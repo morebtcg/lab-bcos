@@ -48,7 +48,7 @@ void SyncMsgEngine::messageHandler(
             << "[Rcv] [Packet] Reject packet: [reason/nodeId/size/message]: decode failed/"
             << _session->nodeID().abridged() << "/" << _msg->buffer()->size() << "/"
             << toHex(*_msg->buffer()) << endl;
-        _session->stop(BadProtocol);
+        _session->stop(dev::network::BadProtocol);
         return;
     }
 
